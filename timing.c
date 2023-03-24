@@ -181,9 +181,9 @@ interval_pton(const char *spec, struct interval *intv)
 		loc.tm_mday = mday;
 		loc.tm_mon = month - 1;
 		loc.tm_year = year - 1900;
-		loc.tm_hour = 16
+		loc.tm_hour = -8;
 		base = mktime(&loc);
-		base -= base % 86400;
+		//base -= base % 86400;
 
 		intv->type  = FIXED;
 		intv->value = htobe32(value);
